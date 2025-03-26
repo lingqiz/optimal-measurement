@@ -290,8 +290,8 @@ class LinearSequential(Sequential, LinearProjection):
         self.init_mtx(msmt_mtx)
 
 class InverseSequential(Sequential, LinearInverse):
-    def __init__(self, n_sample, im_size, denoiser, msmt_mtx):
-        LinearInverse.__init__(self, n_sample, im_size, denoiser)
+    def __init__(self, n_sample, im_size, denoiser, msmt_mtx, init_im=None):
+        LinearInverse.__init__(self, n_sample, im_size, denoiser, init_im)
 
         self.linear = None
         self.mtx = None
