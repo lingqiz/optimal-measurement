@@ -302,3 +302,16 @@ class InverseSequential(Sequential, LinearInverse):
     def assign(self, _):
         # not implemented for the sequential parameterization
         raise NotImplementedError
+
+class GaussianLinearInverse(LinearInverse):
+    def __init__(self, n_sample, im_size, denoiser, init_im=None):
+        '''
+        Linear Inverse with Gaussian measurement noise
+        '''
+        super().__init__(n_sample, im_size, denoiser, init_im)
+        self.noise_sd = 0.01
+
+    def inverse(self, msmt):
+        # add Gaussian noise
+        noise = torch.randn_like(msmt) * self.noise_sd
+        return super().inverse(msmt + noise)
