@@ -311,7 +311,20 @@ class GaussianLinearInverse(LinearInverse):
         super().__init__(n_sample, im_size, denoiser, init_im)
         self.noise_sd = 0.01
 
-    def inverse(self, msmt):
+    def _run_recon(self, x):
+        """
+        Override the reconstruction function to add Gaussian noise
+        """
+        # update the measurement matrix
+        # based on the parameterization
+        self.refresh()
+
+        # compute the linear measurement
+        msmt = self.measure(x)
+
         # add Gaussian noise
-        noise = torch.randn_like(msmt) * self.noise_sd
-        return super().inverse(msmt + noise)
+        noise = torch.randn((1, msmt.shape[1])) * self.noise_sd
+        msmt = msmt + noise.repeat([msmt.shape[0], 1])
+
+        # run the reconstruction routine
+        return self.inverse(msmt)
