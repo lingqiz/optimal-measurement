@@ -323,7 +323,7 @@ class GaussianLinearInverse(LinearInverse):
         msmt = self.measure(x)
 
         # add Gaussian noise
-        noise = torch.randn((1, msmt.shape[1])) * self.noise_sd
+        noise = self.noise_sd * torch.rand_like(msmt[0]).reshape([1, -1])
         msmt = msmt + noise.repeat([msmt.shape[0], 1])
 
         # run the reconstruction routine
