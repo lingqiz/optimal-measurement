@@ -1,8 +1,12 @@
 import torch
 import torch.nn as nn
 
-# A fully connected denoiser for bivariate input
+# Note that while we use blind denoiser setup here to be consistent with the rest of the paper,
+# a non-blind denoiser can potentially perform much better with the 2D data (future work).
 class Denoiser(nn.Module):
+    '''
+    A fully connected denoiser for bivariate input.
+    '''
     def __init__(self, n_node, n_int, bias=False) -> None:
         super().__init__()
 
