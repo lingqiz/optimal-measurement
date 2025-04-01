@@ -11,7 +11,7 @@ source denoiser-recon/bin/activate
 pip install -r requirements.txt
 ```
 
-### Learning Image Prior and OLMs
+### Learning image prior and OLMs
 ```
 train_cnn.py: learning the denoiser (diffusion model) prior.
 train_olm.py: learning the optimal linear measurement. 
