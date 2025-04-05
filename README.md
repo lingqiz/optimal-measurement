@@ -1,6 +1,5 @@
-## Optimized Linear Measurements for Image Reconstruction
+## Generalized Compressed Sensing for Image Reconstruction with Diffusion Probabilistic Models
 
-**Optimal compressed sensing for image reconstruction with diffusion probabilistic models**    
 Ling-Qi Zhang, Zahra Kadkhodaie, Eero P. Simoncelli, and David H. Brainard   
 [https://arxiv.org/abs/2405.17456](https://arxiv.org/html/2405.17456v2)
 
