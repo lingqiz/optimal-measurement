@@ -17,3 +17,9 @@ pip install -r requirements.txt
 train_cnn.py: learning the denoiser (diffusion model) prior.
 train_olm.py: learning the optimal linear measurement. 
 ```
+
+### Examples
+See `/notebook` for examples of 
+- learning the optimized linear measurement
+- running the image reconstruction with the diffusion model
+- analyzing the properties of the measurement matrix
