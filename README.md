@@ -1,7 +1,7 @@
 ## Generalized Compressed Sensing for Image Reconstruction with Diffusion Probabilistic Models
 
 Ling-Qi Zhang, Zahra Kadkhodaie, Eero P. Simoncelli, and David H. Brainard   
-*Transactions on Machine Learning Research (TMLR)*    
+*Transactions on Machine Learning Research (TMLR)*, May 2025    
 [https://openreview.net/forum?id=lmHh4FmPWZ](https://openreview.net/forum?id=lmHh4FmPWZ)
 
 
